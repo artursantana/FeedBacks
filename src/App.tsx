@@ -1,10 +1,10 @@
-
+import Index from "./Components/api/Index"
 
 function App() {
 
   return (
     <>
-    <h1>Artur</h1>
+    <Index />
     </>
   )
 }
