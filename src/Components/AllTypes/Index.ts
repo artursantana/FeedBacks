@@ -11,9 +11,7 @@ export type Item = {
     installments: {
         amount: number
     }
-    item?:{
-        cart: string
-    }
+    isOpen: boolean
     
 }
 

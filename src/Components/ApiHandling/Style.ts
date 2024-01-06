@@ -15,7 +15,7 @@ div{
     flex-direction: column;
     border: 1px solid red;
     text-align: center;
-    margin: 25px;
+    margin: 15px;
 
     img{
         margin: auto;
@@ -23,10 +23,9 @@ div{
     }
 
     .ButtonValue{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5px;
+        margin-top: 10px;
+      padding: 15px;
+      text-align: center;
     }
 }
 
