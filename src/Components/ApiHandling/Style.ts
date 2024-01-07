@@ -4,28 +4,48 @@ import styled from "styled-components"
 
 
 export const Body = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
 margin: 20px;
-overflow-y: scroll;
-box-shadow: 1px 10px 20px black;
 
-div{
+.divMap{
     display: flex;
-    flex-direction: column;
-    border: 1px solid red;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 15px;
     text-align: center;
     margin: 15px;
+    height: 150px;
+
 
     img{
         margin: auto;
-        max-width: 150px;
+        height: 150px;
+        left: 0;
     }
 
-    .ButtonValue{
-        margin-top: 10px;
-      padding: 15px;
-      text-align: center;
+    .divTitle{
+        
+        font-weight: bolder;
+        text-align: left;
+        max-width: 250px;
+        h1{
+            color: #002D62;
+        }
+    }
+
+
+    .divButton{
+        display: flex;
+        height: 150px;
+        position: relative ;
+        .ButtonValue{
+            width: 150px;
+            height: 25px;
+            position: absolute;
+            bottom: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+          
+        }
     }
 }
 
