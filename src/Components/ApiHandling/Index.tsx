@@ -25,7 +25,6 @@ const Index = () => {
             throw new Error('Dados da API estão em um formato inesperado.');
           }
           setData(newData.results);
-          console.log(data)
         })
         .catch((error) => {
           console.error('Erro na solicitação:', error);

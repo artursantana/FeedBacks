@@ -27,7 +27,7 @@ background-color: white;
 color: black;
 padding: 4rem;
 border-radius: 8px;
-box-shadow: 1px 5px 1px 1px black;
+
 
 
 

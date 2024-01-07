@@ -3,7 +3,7 @@ import * as S from './Style'
 
 import Item from'../AllTypes/Index'
 
-const Modal: React.FC<Item> = ({ isOpen, setOpen, ItemTitle }) => {
+const Modal = ({ isOpen, setOpen, ItemTitle }: Item) => {
 
     if(isOpen){
         return (
