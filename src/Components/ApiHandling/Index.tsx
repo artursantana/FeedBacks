@@ -15,7 +15,6 @@ const Index = () => {
 
     const [data, setData] = useState<Item[]>([]);
     const [open, setOpen] = useState<boolean>(false)
-    const [selectedTitle, setSelectedTitle] = useState('');
 
     useEffect(() => {
       fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular')
@@ -31,10 +30,7 @@ const Index = () => {
         });
     }, [data]);
 
-    const handleItemClick = ({title}: Item) => {
-        setSelectedTitle(title);
-        setOpen(true);
-      };
+   
   
   return (
     <S.Body>
@@ -51,13 +47,13 @@ const Index = () => {
             <div className='divButton'>
             <button className='ButtonValue' onClick={()=>{
               setOpen(!open);
-               handleItemClick(item)
+               
                }}>
                   feedBaaks (0)
               </button> 
           </div> 
 
-          <Modal isOpen={open} setOpen={setOpen} ItemTitle={selectedTitle} />
+          <Modal isOpen={open} setOpen={setOpen} />
           
           
           </div>

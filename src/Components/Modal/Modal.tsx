@@ -3,7 +3,9 @@ import * as S from './Style'
 
 import Item from'../AllTypes/Index'
 
-const Modal = ({ isOpen, setOpen, ItemTitle }: Item) => {
+import Comments from './Comments/Index'
+
+const Modal = ({ isOpen, setOpen }: Item) => {
 
     if(isOpen){
         return (
@@ -11,7 +13,7 @@ const Modal = ({ isOpen, setOpen, ItemTitle }: Item) => {
                 <S.SubConatiner>
 
                 
-                 <p> Esse é o : {ItemTitle}</p>
+                < Comments />
 
                 <S.ButtonModal onClick={()=>setOpen(!isOpen)}>Close</S.ButtonModal>
                 </S.SubConatiner>
