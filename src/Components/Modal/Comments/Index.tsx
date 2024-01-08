@@ -17,10 +17,7 @@ interface Props {
 
 const Index = () => {
 
-const [comment, setComment] = useState<Props[]>([
-    {id:1, name:'artur',done:false},
-    {id:2, name:'renata',done:true}
-])
+const [comment, setComment] = useState<Props[]>([])
 
 const handleAddTask = (taskName: string) => {
     const newComment = [...comment]
@@ -34,7 +31,7 @@ const handleAddTask = (taskName: string) => {
 
   return (
     <S.CardComment>
-        <Add />
+        <Add onEnter={handleAddTask} />
       {
       comment.map((Element, index)=>(
         <div key={index}>

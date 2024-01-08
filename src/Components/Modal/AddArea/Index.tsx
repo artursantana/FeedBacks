@@ -2,14 +2,21 @@
 import { useState } from 'react'
 import * as S from './style'
 
+type Props = {
+    onEnter: (taskName: string) => void
+    onKeyUp: (e: KeyboardEvent) => void
+    
+}
 
-const Index = () => {
+
+const Index = ({onEnter}: Props) => {
 
     const [inputText, setInputText] = useState('')
 
 const handleKeyup = (e: KeyboardEvent) => {
         if(e.code === 'Enter' && inputText !== ''){
-            console.log('arur')
+            onEnter(inputText)
+            
         }
 }
 
