@@ -30,18 +30,19 @@ const handleAddTask = (taskName: string) => {
 }
 
   return (
-    <S.CardComment>
+    <S.ContainerComment>
         <Add onEnter={handleAddTask} />
       {
       comment.map((Element, index)=>(
-        <div key={index}>
-            <p>{Element.name}</p>
+        <S.CardComment key={index}>
+            <h2>Comments :</h2>
+            <S.Comment>{Element.name}</S.Comment>
             
-        </div>
+        </S.CardComment>
 
       ))
       }
-    </S.CardComment>
+    </S.ContainerComment>
   )
 }
 

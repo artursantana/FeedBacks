@@ -4,14 +4,14 @@
 import * as S from './Style'
 import { useEffect, useState } from 'react';
 
-
-
-
 import Item from '../AllTypes/Index'
 import Modal from '../Modal/Modal'
+import FeedValue from './FeedValue'
 
 
-const Index = () => {
+
+
+const Index = ({lastCommentId}: Item) => {
 
     const [data, setData] = useState<Item[]>([]);
     const [open, setOpen] = useState<boolean>(false)
@@ -49,7 +49,7 @@ const Index = () => {
               setOpen(!open);
                
                }}>
-                  feedBaaks (0)
+                 <FeedValue lastCommentId={lastCommentId} />
               </button> 
           </div> 
 

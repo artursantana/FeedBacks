@@ -25,10 +25,11 @@ left: 50%;
 transform: translate(-50%, -50%);
 background-color: white;
 color: black;
-padding: 4rem;
 border-radius: 8px;
-
-
+padding: 15px;
+width: 500px;
+height: 300px;
+overflow: auto;
 
 
 `

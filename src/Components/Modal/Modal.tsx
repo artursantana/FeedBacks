@@ -5,6 +5,8 @@ import Item from'../AllTypes/Index'
 
 import Comments from './Comments/Index'
 
+
+
 const Modal = ({ isOpen, setOpen }: Item) => {
 
     if(isOpen){

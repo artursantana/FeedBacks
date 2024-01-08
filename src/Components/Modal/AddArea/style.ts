@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
 
-
-
 export const Add = styled.div`
-display: flex;
+flex-direction: column;
+width: 100%;
 
 
-input {
+textarea {
     outline: 0;
-    border: 0;
+    border-radius: 8px;
     background: transparent;
     font-size: 18px;
-    flex: 1;
+    width: 100%;height:60px;
+    text-align: initial;
 }
 
+button{
+    display: flex;
+}
 
 
 
