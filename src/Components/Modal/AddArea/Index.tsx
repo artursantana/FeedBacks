@@ -1,22 +1,24 @@
 
 import { useState, useEffect } from 'react'
 import * as S from './style'
-import FeedValue from '../../ApiHandling/FeedValue'
+
+
 
 type Props = {
-    onEnter: (taskName: string) => void
-    onKeyUp: (e: KeyboardEvent) => void
+    
+   type: string
     
 }
 
 
-const Index = ({onEnter}: Props) => {
+const Index = ({type}: Props) => {
 
     const [inputText, setInputText] = useState('')
     const [comments, setComments] = useState<string[]>([]);
     const [lastCommentId, setLastCommentId] = useState<number | null>(null);
+   
 
-const handleKeyup = (e: KeyboardEvent) => {
+/*const handleKeyup = (e: KeyboardEvent) => {
         if(e.code === 'Enter' && inputText !== ''){
 
 
@@ -28,23 +30,29 @@ const handleKeyup = (e: KeyboardEvent) => {
           onEnter(inputText)
             
         }
-}
+}*/
 
 const handleClick = () => {
-  if(inputText !== ''){
+  if (inputText !== '') {
+   
+    const storedComments = localStorage.getItem('comments');
+    let existingComments = [];
 
+    if (storedComments) {
+      existingComments = JSON.parse(storedComments);
+    }
 
-    const newComments = [...comments, inputText.trim()];
-    localStorage.setItem('comments', JSON.stringify(newComments));
-    onEnter(inputText)
-
-    setInputText('');
-
-    setLastCommentId(newComments.length)
+    const newComments = [...existingComments, inputText.trim()];
     
+    setComments(newComments);
+    localStorage.setItem('comments', JSON.stringify(newComments));
+    
+  
+
     
   }
 }
+
 
 
 useEffect(() => {
@@ -55,22 +63,26 @@ useEffect(() => {
   
 }, []);
 
+useEffect(() => {
+  setLastCommentId(comments.length);
+}, [comments]);
+
 
 
 
   return (
     <S.Add>
-        <textarea type="text" placeholder='Write here' onChange={(e)=>setInputText(e.target.value)} onKeyUp={handleKeyup} />
+        <textarea type="text" placeholder='Write here' onChange={(e)=>setInputText(e.target.value)} />
         <button onClick={handleClick} type='submit'>Submit</button>
-
-       
 
         <div>
                 <h3>Comments:</h3>
-                <FeedValue lastCommentId={lastCommentId} />
                 <ul>
                     {comments.map((comment, index) => (
-                        <li key={index}>{comment}</li>
+                        <div>
+                          <li key={index}>{comment}</li>
+                          
+                        </div>
                     ))}
                 </ul>
             </div>

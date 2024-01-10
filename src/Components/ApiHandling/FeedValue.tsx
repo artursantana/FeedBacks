@@ -1,14 +1,21 @@
+// FeedValue.tsx
 
-
+import React, { useEffect, useState } from 'react';
 
 interface FeedValueProps {
-    lastCommentId: number | null;
-  }
+  lastComment: number;
+}
 
-const FeedValue: React.FC<FeedValueProps> = ({ lastCommentId }) => {
+const FeedValue: React.FC<FeedValueProps> = ({ lastComment }) => {
+  const [dynamicLastComment, setDynamicLastComment] = useState<number>(0);
+
+  useEffect(() => {
+    setDynamicLastComment(lastComment);
+  }, [lastComment]);
+
   return (
     <div>
-      <p> feedbacks {lastCommentId}</p>
+      <p>Feedbacks: {`${dynamicLastComment}`}</p>
     </div>
   );
 };
