@@ -4,7 +4,7 @@ import Item from '../AllTypes/Index';
 import Modal from '../Modal/Modal';
 import FeedValue from './FeedValue';
 
-const Index = ({ lastCommentId }) => {
+const Index = () => {
   const [data, setData] = useState<Item[]>([]);
   const [open, setOpen] = useState<boolean>(false);
 
@@ -24,27 +24,25 @@ const Index = ({ lastCommentId }) => {
 
   
   return (
-    <S.Body>
-      {data.map((item) => (
-        <div className='divMap' key={item.id}>
-          <div><img src={item.thumbnail} alt='fotos' /></div>
-          <div className='divTitle'>
-            <h4>{item.title}</h4>
-            <h1> € {item.installments.amount}</h1>
+      <S.Body>
+        {data.map((item) => (
+          <div className='divMap' key={item.id}>
+            <div><img src={item.thumbnail} alt='fotos' /></div>
+            <div className='divTitle'>
+              <h4>{item.title}</h4>
+              <h1> € {item.installments.amount}</h1>
+            </div>
+            <div className='divButton'>
+              <button className='ButtonValue' onClick={() => {
+                setOpen(!open);
+              }}>
+                <FeedValue />
+              </button>
+            </div>
+            <Modal isOpen={open} setOpen={setOpen} />
           </div>
-
-          <div className='divButton'>
-            <button className='ButtonValue' onClick={() => {
-              setOpen(!open);
-            }}>
-              <FeedValue lastComment={lastCommentId || 0} />
-            </button>
-          </div>
-
-          <Modal isOpen={open} setOpen={setOpen} />
-        </div>
-      ))}
-    </S.Body>
+        ))}
+      </S.Body>
   );
 };
 

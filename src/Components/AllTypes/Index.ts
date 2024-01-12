@@ -15,6 +15,7 @@ export type Item = {
     setOpen: (isOpen: boolean) => void
     ItemTitle: string
     lastCommentId: number | null;
+    value: (lastCommentId: number | null) => void
     
 }
 

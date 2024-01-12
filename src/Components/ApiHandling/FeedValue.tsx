@@ -1,21 +1,16 @@
-// FeedValue.tsx
+const FeedValue = () => {
+  let comments = localStorage.getItem('comments');
+  let numberOfComments = 0;
 
-import React, { useEffect, useState } from 'react';
-
-interface FeedValueProps {
-  lastComment: number;
-}
-
-const FeedValue: React.FC<FeedValueProps> = ({ lastComment }) => {
-  const [dynamicLastComment, setDynamicLastComment] = useState<number>(0);
-
-  useEffect(() => {
-    setDynamicLastComment(lastComment);
-  }, [lastComment]);
+  if (comments == undefined || comments == null) {
+    comments = '0';
+  } else {
+    numberOfComments = JSON.parse(comments).length;
+  }
 
   return (
     <div>
-      <p>Feedbacks: {`${dynamicLastComment}`}</p>
+      <p>Feedbacks: {numberOfComments}</p>
     </div>
   );
 };
