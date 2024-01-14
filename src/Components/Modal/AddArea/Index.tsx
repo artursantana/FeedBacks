@@ -9,6 +9,8 @@ const Index = () => {
   
 
   const handleClick = () => {
+
+
     if (inputText !== '') {
       const storedComments = localStorage.getItem('comments');
       let existingComments = [];
@@ -41,6 +43,7 @@ const Index = () => {
         <button onClick={handleClick} type='submit'>
           Submit
         </button>
+        
 
         <div>
           <h3>Comments:</h3>
@@ -48,7 +51,6 @@ const Index = () => {
             {comments.map((comment, index) => (
               <div key={index}>
                 <div>{comment}</div>
-                
               </div>
             ))}
           </ul>

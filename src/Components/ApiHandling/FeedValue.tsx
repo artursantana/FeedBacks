@@ -10,7 +10,7 @@ const FeedValue = () => {
 
   return (
     <div>
-      <p>Feedbacks: {numberOfComments}</p>
+      <p>Feedbacks: {`${numberOfComments}`}</p>
     </div>
   );
 };

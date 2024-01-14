@@ -25,7 +25,16 @@ const Index = () => {
   
   return (
       <S.Body>
-        {data.map((item) => (
+
+        {
+          data.length == 0 && (
+            <div>Carregando Dados...</div>
+          )
+        }
+
+
+        
+        {data && (data.map((item) => (
           <div className='divMap' key={item.id}>
             <div><img src={item.thumbnail} alt='fotos' /></div>
             <div className='divTitle'>
@@ -40,7 +49,7 @@ const Index = () => {
               </button>
             </div>
             <Modal isOpen={open} setOpen={setOpen} />
-          </div>
+          </div>)
         ))}
       </S.Body>
   );

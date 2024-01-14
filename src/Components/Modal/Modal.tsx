@@ -13,11 +13,10 @@ const Modal = ({ isOpen, setOpen }: Item) => {
         return (
             <S.Container>
                 <S.SubConatiner>
-
-                
                 < Comments />
 
                 <S.ButtonModal onClick={()=>setOpen(!isOpen)}>Close</S.ButtonModal>
+
                 </S.SubConatiner>
             </S.Container>
           )

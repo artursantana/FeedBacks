@@ -17,7 +17,7 @@ interface Props {
 
 const Index = () => {
 
-const [comment, setComment] = useState<Props[]>([])
+const [comment] = useState<Props[]>([])
 
 
   return (
@@ -27,7 +27,7 @@ const [comment, setComment] = useState<Props[]>([])
       {
       comment.map((element, index)=>(
         <S.CardComment key={index}>
-            <h2>Comments :{lastCommentId}</h2>
+            <h2>Comments :</h2>
             <S.Comment>{element.name}</S.Comment>
         </S.CardComment>
 

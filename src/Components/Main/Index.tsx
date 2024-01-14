@@ -16,6 +16,10 @@ const Index = () => {
         <h1>Mercado Livre</h1>
       </S.Header>
 
+
+{
+  
+}
     <BodyBox />
       
     </S.Container>
