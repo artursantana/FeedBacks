@@ -22,6 +22,7 @@ const Index = () => {
       });
   }, []);
 
+
   
   return (
       <S.Body>
@@ -42,11 +43,11 @@ const Index = () => {
               <h1> € {item.installments.amount}</h1>
             </div>
             <div className='divButton'>
-              <button className='ButtonValue' onClick={() => {
-                setOpen(!open);
+              <button className='ButtonValue' onClick={() => {                setOpen(!open);
               }}>
-                <FeedValue />
+                  <FeedValue />
               </button>
+            
             </div>
             <Modal isOpen={open} setOpen={setOpen} />
           </div>)

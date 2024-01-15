@@ -7,6 +7,7 @@ const Index = () => {
   const [comments, setComments] = useState<string[]>([]);
   const [lastCommentId, setLastCommentId] = useState<number | null>(null);
   
+  
 
   const handleClick = () => {
 
