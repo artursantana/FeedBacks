@@ -9,7 +9,6 @@ width: 100%;
 textarea {
     outline: 0;
     border-radius: 8px;
-    background: transparent;
     font-size: 18px;
     width: 100%;height:60px;
     text-align: initial;

@@ -1,13 +1,16 @@
 
 import * as S from './Style'
 
-import Item from'../AllTypes/Index'
+type ModalProps = {
+    isOpen: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  };
 
 import Comments from './Comments/Index'
 
 
 
-const Modal = ({ isOpen, setOpen }: Item) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, setOpen }) => {
 
     if(isOpen){
         return (

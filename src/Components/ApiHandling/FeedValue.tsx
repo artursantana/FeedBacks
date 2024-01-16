@@ -1,5 +1,6 @@
 const FeedValue = () => {
   let comments = localStorage.getItem('comments');
+  console.log(comments)
   let numberOfComments = 0;
 
   if (comments == undefined || comments == null) {

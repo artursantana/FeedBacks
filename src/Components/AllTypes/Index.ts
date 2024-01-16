@@ -12,7 +12,7 @@ export type Item = {
     installments: {
         amount: number }
     isOpen: boolean
-    setOpen: (isOpen: boolean) => void
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
     ItemTitle: string
     lastCommentId: number | null;
     value: (lastCommentId: number | null) => void

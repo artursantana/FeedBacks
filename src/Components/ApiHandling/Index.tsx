@@ -4,9 +4,12 @@ import Item from '../AllTypes/Index';
 import Modal from '../Modal/Modal';
 import FeedValue from './FeedValue';
 
+
+
+
 const Index = () => {
   const [data, setData] = useState<Item[]>([]);
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular')
