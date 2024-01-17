@@ -21,7 +21,7 @@ const Index = () => {
         setData(newData.results);
       })
       .catch((error) => {
-        console.error('Erro na solicitação:', error);
+        console.error(error);
       });
   }, []);
 
